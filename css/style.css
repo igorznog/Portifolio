@@ -192,7 +192,7 @@ h2 {
   top:0;
   width:30px;
   height:100%;
-  z-index:2;
+  z-index:1000000;
   pointer-events:none;
   opacity:0.6;
 }
