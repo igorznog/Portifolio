@@ -200,9 +200,22 @@ h2 {
 }
 
 .cert-container::-webkit-scrollbar {
-  display:none;
+  height: 8px;
 }
 
+.cert-container::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 10px;
+}
+
+.cert-container::-webkit-scrollbar-thumb {
+  background: #8B0000;
+  border-radius: 10px;
+}
+
+.cert-container::-webkit-scrollbar-thumb:hover {
+  background: #ff4d4d;
+}
 .cert-track {
   display:flex;
   gap:20px;
