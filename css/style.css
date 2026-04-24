@@ -195,7 +195,7 @@ h2 {
   scroll-snap-type: x mandatory;
 
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: yes;
   -webkit-overflow-scrolling: touch;
 }
 
