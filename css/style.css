@@ -187,97 +187,60 @@ h2 {
   100% { transform: translateX(-50%); }
 }
 
-/* CERTIFICADOS */
+/* CONTAINER */
 .cert-container {
-  position:relative;
-  overflow-x:auto;
-  padding:10px 0 20px;
-  scroll-snap-type: x mandatory;
-
-  -ms-overflow-style: none;
-  scrollbar-width: yes;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  padding: 10px 0 20px;
+  width: 100%;
 }
 
+/* TRACK (FORÇA A ULTRAPASSAR A TELA) */
+.cert-track {
+  display: inline-flex;   /* 👈 muda de flex pra inline-flex */
+  gap: 20px;
+}
+
+/* CARDS */
+.cert-card {
+  flex: 0 0 220px;  /* 👈 impede de encolher */
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+}
+
+.cert-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.cert-card h3 {
+  padding: 10px;
+}
+
+.cert-card p {
+  padding: 0 10px 10px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+/* SCROLLBAR */
 .cert-container::-webkit-scrollbar {
   height: 8px;
 }
 
 .cert-container::-webkit-scrollbar-track {
   background: #111;
-  border-radius: 10px;
 }
 
 .cert-container::-webkit-scrollbar-thumb {
   background: #8B0000;
   border-radius: 10px;
-}
-
-.cert-container::-webkit-scrollbar-thumb:hover {
-  background: #ff4d4d;
-}
-.cert-track {
-  display:flex;
-  gap:20px;
-  padding:0;
-}
-
-.cert-card {
-  min-width:220px;
-  background:#111;
-  border-radius:12px;
-  overflow:hidden;
-  transition:.3s;
-  scroll-snap-align:start;
-}
-
-.cert-card:hover {
-  transform:scale(1.05);
-}
-
-.cert-card img {
-  width:100%;
-  height:130px;
-  object-fit:cover;
-}
-
-.cert-card h3 {
-  padding:10px;
-  text-align:left;
-}
-
-.cert-card p {
-  padding:0 10px 10px;
-  font-size:0.9em;
-  color:#ccc;
-  text-align:left;
-}
-
-/* CONTATO */
-.contact {
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  justify-content:center;
-  margin-top:20px;
-}
-
-.contact a {
-  display:block;
-  background:#222222;
-  padding:12px;
-  border-radius:10px;
-  transition:.3s;
-}
-
-.contact a img {
-  width:50px;
-  height:50px;
-}
-
-.contact a:hover {
-  transform:scale(1.1);
-  border:1px solid #ff4d4d;
 }
 
 /* CURRÍCULO */
