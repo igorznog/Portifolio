@@ -1,7 +1,15 @@
 
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-body { background:#0a0a0a; color:#fff; }
+body {
+  background:#0a0a0a;
+  color:#fff;
+}
 
 /* HEADER */
 header {
@@ -19,8 +27,26 @@ header img {
   margin-bottom:15px;
 }
 
-header h1 { font-size:2.5em; }
-header p, header .frase { color:#ccc; margin-top:10px; }
+header h1 {
+  font-size:2.5em;
+}
+
+/* LOGO CLICÁVEL */
+header h1 a {
+  text-decoration:none;
+  color:inherit;
+  transition:.3s;
+}
+
+header h1 a:hover {
+  color:#ff4d4d;
+}
+
+header p,
+header .frase {
+  color:#ccc;
+  margin-top:10px;
+}
 
 /* NAV */
 nav {
@@ -34,14 +60,22 @@ nav {
   z-index:10000;
 }
 
-nav a { color:#fff; text-decoration:none; font-weight:600; }
-nav a:hover { color:#ff4d4d; }
+nav a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+nav a:hover {
+  color:#ff4d4d;
+}
 
 /* SEÇÕES */
 section {
   max-width:1100px;
   margin:auto;
   padding:60px 20px;
+  text-align:left;
 }
 
 h2 {
@@ -49,6 +83,27 @@ h2 {
   margin-bottom:30px;
   border-left:4px solid #ff4d4d;
   padding-left:10px;
+  text-align:left;
+}
+
+/* SOBRE */
+.about {
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:30px;
+  align-items:center;
+  text-align:left;
+}
+
+.about img {
+  width:100%;
+  border-radius:10px;
+}
+
+.about p {
+  text-align:left;
+  line-height:1.7;
+  max-width:700px;
 }
 
 /* GRID DE PROJETOS */
@@ -78,10 +133,18 @@ h2 {
 
 .card-content {
   padding:15px;
+  text-align:left;
 }
 
-.card-content h3 { margin-bottom:8px; }
-.card-content p { color:#ccc; font-size:0.9em; }
+.card-content h3 {
+  margin-bottom:8px;
+}
+
+.card-content p {
+  color:#ccc;
+  font-size:0.9em;
+}
+
 .card-content a {
   display:inline-block;
   margin-top:8px;
@@ -89,30 +152,33 @@ h2 {
   text-decoration:none;
   font-weight:bold;
 }
-.card-content a:hover { text-decoration:underline; }
 
-/* SKILLS - LOGOS ANIMADAS */
+.card-content a:hover {
+  text-decoration:underline;
+}
+
+/* SKILLS */
 .skills {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin: 20px 0;
+  overflow:hidden;
+  position:relative;
+  width:100%;
+  margin:20px 0;
 }
 
 .skills-track {
-  display: flex;
-  gap: 30px;
+  display:flex;
+  gap:30px;
   padding-left:20px;
   animation: scrollSkills 20s linear infinite;
 }
 
 .skills-track span img {
-  width: 50x;   
-  height: 50px;
+  width:50px;
+  height:50px;
   transition: transform 0.5s;
 }
 
-.skills-track a:hover img {
+.skills-track span img:hover {
   transform: scale(1.2);
 }
 
@@ -121,17 +187,57 @@ h2 {
   100% { transform: translateX(-50%); }
 }
 
-/* SOBRE */
-.about {
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:30px;
-  align-items:center;
+/* CERTIFICADOS */
+.cert-container {
+  position:relative;
+  overflow-x:auto;
+  padding:10px 0 20px;
+  scroll-snap-type: x mandatory;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-.about img {
+.cert-container::-webkit-scrollbar {
+  display:none;
+}
+
+.cert-track {
+  display:flex;
+  gap:20px;
+  padding:0;
+}
+
+.cert-card {
+  min-width:220px;
+  background:#111;
+  border-radius:12px;
+  overflow:hidden;
+  transition:.3s;
+  scroll-snap-align:start;
+}
+
+.cert-card:hover {
+  transform:scale(1.05);
+}
+
+.cert-card img {
   width:100%;
-  border-radius:10px;
+  height:130px;
+  object-fit:cover;
+}
+
+.cert-card h3 {
+  padding:10px;
+  text-align:left;
+}
+
+.cert-card p {
+  padding:0 10px 10px;
+  font-size:0.9em;
+  color:#ccc;
+  text-align:left;
 }
 
 /* CONTATO */
@@ -159,80 +265,6 @@ h2 {
 .contact a:hover {
   transform:scale(1.1);
   border:1px solid #ff4d4d;
-}
-
-/* CERTIFICADOS */
-.cert-container {
-  position:relative;
-  overflow-x:auto;
-  padding:10px 0 20px;
-  scroll-snap-type: x mandatory;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  .cert-container::-webkit-scrollbar {
-    display: none;
-}
-
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: #8B0000 #111;
-}
-
-/* Scrollbar estilizada */
-.cert-container::-webkit-scrollbar { height:8px; }
-.cert-container::-webkit-scrollbar-track { background:#111; border-radius:10px; }
-.cert-container::-webkit-scrollbar-thumb { background:#8B0000; border-radius:10px; }
-.cert-container::-webkit-scrollbar-thumb:hover { background:#ff4d4d; }
-
-/* Fade lateral */
-.cert-container::before,
-.cert-container::after {
-  content:"";
-  position:absolute;
-  top:0;
-  width:30px;
-  height:100%;
-  z-index:2;
-  pointer-events:none;
-  opacity:0.6;
-}
-
-
-.cert-track {
-  display:flex;
-  gap:20px;
-  padding:0 20px;
-}
-
-.cert-card {
-  min-width:220px;
-  background:#111;
-  border-radius:12px;
-  overflow:hidden;
-  transition:.3s;
-  scroll-snap-align:start;
-}
-
-.cert-card:hover {
-  transform:scale(1.05);
-  border:1px solid #ff4d4d;
-}
-
-.cert-card img {
-  width:100%;
-  height:130px;
-  object-fit:cover;
-}
-
-.cert-card h3 {
-  padding:10px;
-}
-
-.cert-card p {
-  padding:0 10px 10px;
-  font-size:0.9em;
-  color:#ccc;
 }
 
 /* CURRÍCULO */
@@ -270,18 +302,52 @@ footer {
   color:#aaa;
 }
 
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
 /* RESPONSIVO */
 @media(max-width:768px){
   header { padding:40px 15px; }
   header h1 { font-size:1.8em; }
-  nav { flex-wrap:wrap; gap:15px; padding:10px; }
+
+  nav {
+    flex-wrap:wrap;
+    gap:15px;
+    padding:10px;
+  }
+
   section { padding:40px 15px; }
-  .about { grid-template-columns:1fr; text-align:justify; }
-  .about img { max-width:250px; margin:auto; }
-  .grid { grid-template-columns:1fr; }
-  .card img { height:160px; }
-  .cert-card { min-width:200px; }
-  .cv-box { padding:20px; }
-  .contact a img { width:40px; height:40px; }
-  .skills-track a img { width:50px; height:50px; }
+
+  .about {
+    grid-template-columns:1fr;
+    text-align:left;
+  }
+
+  .about img {
+    max-width:250px;
+    margin:auto;
+  }
+
+  .grid {
+    grid-template-columns:1fr;
+  }
+
+  .card img {
+    height:160px;
+  }
+
+  .cert-card {
+    min-width:200px;
+  }
+
+  .cv-box {
+    padding:20px;
+  }
+
+  .contact a img {
+    width:40px;
+    height:40px;
+  }
 }
